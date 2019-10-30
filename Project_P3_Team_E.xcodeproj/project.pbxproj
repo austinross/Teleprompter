@@ -13,6 +13,10 @@
 		183B603F235F88550096BFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183B603E235F88550096BFB9 /* Assets.xcassets */; };
 		183B6042235F88550096BFB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183B6040235F88550096BFB9 /* LaunchScreen.storyboard */; };
 		183B604D235F88550096BFB9 /* Project_P3_Team_ETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B604C235F88550096BFB9 /* Project_P3_Team_ETests.swift */; };
+		BD3F1CF4235FB05300008BA5 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F1CF3235FB05300008BA5 /* CreationViewController.swift */; };
+		BD3F1CF6235FBEBD00008BA5 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F1CF5235FBEBD00008BA5 /* PresentViewController.swift */; };
+		BD3F1CF8235FC1F700008BA5 /* SelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F1CF7235FC1F700008BA5 /* SelectedViewController.swift */; };
+		BD3F1CFA235FC88E00008BA5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F1CF9235FC88E00008BA5 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		183B6048235F88550096BFB9 /* Project_P3_Team_ETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project_P3_Team_ETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		183B604C235F88550096BFB9 /* Project_P3_Team_ETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_P3_Team_ETests.swift; sourceTree = "<group>"; };
 		183B604E235F88550096BFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD3F1CF3235FB05300008BA5 /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		BD3F1CF5235FBEBD00008BA5 /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
+		BD3F1CF7235FC1F700008BA5 /* SelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedViewController.swift; sourceTree = "<group>"; };
+		BD3F1CF9235FC88E00008BA5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,10 @@
 				183B603E235F88550096BFB9 /* Assets.xcassets */,
 				183B6040235F88550096BFB9 /* LaunchScreen.storyboard */,
 				183B6043235F88550096BFB9 /* Info.plist */,
+				BD3F1CF3235FB05300008BA5 /* CreationViewController.swift */,
+				BD3F1CF5235FBEBD00008BA5 /* PresentViewController.swift */,
+				BD3F1CF7235FC1F700008BA5 /* SelectedViewController.swift */,
+				BD3F1CF9235FC88E00008BA5 /* SettingsViewController.swift */,
 			);
 			path = Project_P3_Team_E;
 			sourceTree = "<group>";
@@ -199,6 +211,10 @@
 			files = (
 				183B603A235F88500096BFB9 /* ViewController.swift in Sources */,
 				183B6038235F88500096BFB9 /* AppDelegate.swift in Sources */,
+				BD3F1CF8235FC1F700008BA5 /* SelectedViewController.swift in Sources */,
+				BD3F1CF6235FBEBD00008BA5 /* PresentViewController.swift in Sources */,
+				BD3F1CF4235FB05300008BA5 /* CreationViewController.swift in Sources */,
+				BD3F1CFA235FC88E00008BA5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
