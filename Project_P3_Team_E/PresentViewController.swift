@@ -9,16 +9,19 @@
 import UIKit
 
 class PresentViewController: UIViewController {
-
-    @IBAction func exit(_ sender: Any) {
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.popViewController(animated: true)
-    }
+    
+    @IBOutlet weak var textView: UITextView!
+    
+    var text: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = .black
-        // Do any additional setup after loading the view.
+        textView.text = text
     }
-
+    
+    @IBAction func exit(_ sender: Any) {
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.popViewController(animated: true)
+    }
 }

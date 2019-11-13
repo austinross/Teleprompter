@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    var prompts: Results<Prompt>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,23 +27,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             self.tableView.deselectRow(at: index, animated: true)
         }
+        queryPrompts()
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
-        //TODO: Add data transfer from selected Cell to VC
+        
+        if segue.identifier == "selectedPrompt" {
+            let nextVC = segue.destination as? SelectedViewController
+            let index = (self.tableView.indexPathForSelectedRow?.row)!
+            let selectedPrompt = prompts?[index]
+            nextVC!.prompt = selectedPrompt
+        }
+    }
+    
+    func queryPrompts() {
+        let realm = try! Realm()
+        prompts = realm.objects(Prompt.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return prompts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = "Speech \(indexPath.row + 1)"
-        cell.detailTextLabel?.text = "10/22/19 2:37 PM"
+        cell.textLabel?.text = prompts?[indexPath.row].name
+        cell.detailTextLabel?.text = prompts?[indexPath.row].date
         return cell
     }
     

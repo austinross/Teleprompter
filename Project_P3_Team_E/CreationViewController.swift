@@ -7,34 +7,48 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CreationViewController: UIViewController {
-
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var textView: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     @IBAction func cancel(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func save(_ sender: Any) {
-        //TODO: Save prompt
+        savePrompt()
         navigationController?.popViewController(animated: true)
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func savePrompt() {
+        if nameTextField.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Please enter a name", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        if textView.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Please enter text", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         
+        let promptDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
+        
+        let prompt = Prompt(name: nameTextField.text!, date: promptDate, text: textView.text!)
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(prompt)
+            print("Added prompt \(prompt.name) to Realm.")
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
