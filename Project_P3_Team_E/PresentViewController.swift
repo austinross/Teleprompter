@@ -24,4 +24,25 @@ class PresentViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func mirrorX(_ sender: Any) {
+        textView.flipY()
+    }
+    
+    @IBAction func mirrorY(_ sender: Any) {
+        textView.flipX()
+    }
+    
+}
+
+extension UIView {
+   /// Flip view horizontally.
+   func flipX() {
+       transform = CGAffineTransform(scaleX: -transform.a, y: transform.d)
+   }
+
+   /// Flip view vertically.
+   func flipY() {
+       transform = CGAffineTransform(scaleX: transform.a, y: -transform.d)
+   }
 }

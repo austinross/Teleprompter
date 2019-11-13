@@ -277,14 +277,35 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dzU-kZ-8q3"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="zag-Ms-82U">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="FCa-3u-Jmu">
-                            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="exit:" destination="hWC-D0-ifJ" id="gyT-Bk-a08"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="stop" id="FCa-3u-Jmu">
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="exit:" destination="hWC-D0-ifJ" id="gyT-Bk-a08"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="arrow.up.arrow.down" catalog="system" id="JU2-kE-6HD">
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="mirrorX:" destination="hWC-D0-ifJ" id="VvV-e8-V6j"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="play" id="TDq-uk-PBj">
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="arrow.right.arrow.left" catalog="system" id="2dz-lZ-ogf">
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="mirrorY:" destination="hWC-D0-ifJ" id="arA-eb-RhR"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textView" destination="u0m-pi-5xa" id="V1n-PN-CPg"/>
                     </connections>
@@ -377,6 +398,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.right.arrow.left" catalog="system" width="58" height="64"/>
+        <image name="arrow.up.arrow.down" catalog="system" width="64" height="48"/>
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
