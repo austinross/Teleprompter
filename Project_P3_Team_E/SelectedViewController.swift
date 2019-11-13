@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class SelectedViewController: UIViewController, UITabBarDelegate {
+class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPickerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var promptName: UITextField!
@@ -24,12 +25,37 @@ class SelectedViewController: UIViewController, UITabBarDelegate {
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.tag == 2 { //Navigation to the SettingsViewController
-           if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController {
+        switch item.tag {
+        case 1: //Export
+            //get file Name
+            let fileNameToSave: String = promptName.text!
+            
+            //temp var to read text in text area
+            let content = textView.text
+            
+            //file saving location
+            
+            //directory
+            let fileDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileURL = fileDirURL.appendingPathComponent(fileNameToSave).appendingPathExtension("txt")
+            
+            //writing file
+            do{
+                try content?.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+                print("success writing")
+                print(fileURL)
+            }catch let error as NSError{
+                print("failed to write")
+                print(error)
+            }
+        case 2: //Settings
+            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController {
                 if let navigator = navigationController {
                     navigator.pushViewController(viewController, animated: true)
                 }
             }
+        default:
+            print("Default")
         }
     }
 

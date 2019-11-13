@@ -1,0 +1,6 @@
+framework module Pods_Project_P3_Team_ETests {
+  umbrella header "Pods-Project_P3_Team_ETests-umbrella.h"
+
+  export *
+  module * { export * }
+}

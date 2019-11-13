@@ -1,0 +1,6 @@
+framework module Pods_Project_P3_Team_E {
+  umbrella header "Pods-Project_P3_Team_E-umbrella.h"
+
+  export *
+  module * { export * }
+}

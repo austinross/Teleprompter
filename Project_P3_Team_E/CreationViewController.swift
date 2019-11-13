@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import MobileCoreServices
 
-class CreationViewController: UIViewController {
+class CreationViewController: UIViewController, UIDocumentPickerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var textView: UITextView!
@@ -25,6 +26,13 @@ class CreationViewController: UIViewController {
     @IBAction func save(_ sender: Any) {
         savePrompt()
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func importPrompt(_ sender: Any) {
+        let importMenu = UIDocumentPickerViewController(documentTypes: [String(kUTTypePDF),String(kUTTypeText),String(kUTTypeRTF), String(kUTTypePlainText)], in: .import)
+        importMenu.delegate = self
+        importMenu.modalPresentationStyle = .formSheet
+        self.present(importMenu, animated: true, completion:nil)
     }
     
     func savePrompt() {
