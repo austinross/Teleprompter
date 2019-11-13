@@ -11,14 +11,20 @@ import UIKit
 class SelectedViewController: UIViewController, UITabBarDelegate {
     
     @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var promptName: UITextField!
+    @IBOutlet weak var textView: UITextView!
+    
+    var prompt: Prompt?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.delegate = self
+        promptName.text = prompt?.name
+        textView.text = prompt?.text
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.tag == 2 {
+        if item.tag == 2 { //Navigation to the SettingsViewController
            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController {
                 if let navigator = navigationController {
                     navigator.pushViewController(viewController, animated: true)
@@ -27,14 +33,11 @@ class SelectedViewController: UIViewController, UITabBarDelegate {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       if segue.identifier == "presentPrompt" {
+           let nextVC = segue.destination as? PresentViewController
+           nextVC!.text = prompt?.text
+       }
     }
-    */
 
 }
