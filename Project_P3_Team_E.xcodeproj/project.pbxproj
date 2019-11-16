@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		104103094EBEB018BBF3F567 /* Pods_Project_P3_Team_ETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151132FA4CEFFD43F38E71D6 /* Pods_Project_P3_Team_ETests.framework */; };
+		16871D2D238072C700AF3E86 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 16871D2C238072C700AF3E86 /* Settings.bundle */; };
 		183B6038235F88500096BFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B6037235F88500096BFB9 /* AppDelegate.swift */; };
 		183B603A235F88500096BFB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B6039235F88500096BFB9 /* ViewController.swift */; };
 		183B603D235F88500096BFB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183B603B235F88500096BFB9 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		151132FA4CEFFD43F38E71D6 /* Pods_Project_P3_Team_ETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_P3_Team_ETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16871D2C238072C700AF3E86 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		183B6034235F88500096BFB9 /* Project_P3_Team_E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_P3_Team_E.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183B6037235F88500096BFB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		183B6039235F88500096BFB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				183B6037235F88500096BFB9 /* AppDelegate.swift */,
 				183B6039235F88500096BFB9 /* ViewController.swift */,
 				183B603B235F88500096BFB9 /* Main.storyboard */,
+				16871D2C238072C700AF3E86 /* Settings.bundle */,
 				183B603E235F88550096BFB9 /* Assets.xcassets */,
 				183B6040235F88550096BFB9 /* LaunchScreen.storyboard */,
 				183B6043235F88550096BFB9 /* Info.plist */,
@@ -227,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16871D2D238072C700AF3E86 /* Settings.bundle in Resources */,
 				183B6042235F88550096BFB9 /* LaunchScreen.storyboard in Resources */,
 				183B603F235F88550096BFB9 /* Assets.xcassets in Resources */,
 				183B603D235F88500096BFB9 /* Main.storyboard in Resources */,

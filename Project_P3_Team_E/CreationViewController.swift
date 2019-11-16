@@ -59,4 +59,40 @@ class CreationViewController: UIViewController, UIDocumentPickerDelegate, UINavi
         }
     }
     
+    
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let myURL = urls.first else{
+            return
+        }
+        print("Import result: \(myURL)")
+        
+        var tempText = ""
+        textView.text = ""
+        //file name :- /directory/fileName
+        let  fileName = myURL.deletingPathExtension().lastPathComponent
+        print(fileName)
+        do{
+            tempText = try String(contentsOf: myURL)
+            textView.text = tempText
+        }catch let error as NSError{
+            print("Faile to import")
+            print(error)
+        }
+        
+        if nameTextField.text == ""{
+            nameTextField.text = myURL.deletingPathExtension().lastPathComponent
+        }
+        textView.adjustsFontForContentSizeCategory = true
+    }
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print("Document View was Canceled")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func documentMenu(_ documentMenu: UIDocumentPickerViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
+        print("Document view presented")
+        present(documentPicker, animated: true, completion: nil)
+    }
 }
