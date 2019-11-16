@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 import MobileCoreServices
+import WebKit
+import PDFKit
 
 class CreationViewController: UIViewController, UIDocumentPickerDelegate, UINavigationControllerDelegate {
     
@@ -67,6 +69,7 @@ class CreationViewController: UIViewController, UIDocumentPickerDelegate, UINavi
         }
         print("Import result: \(myURL)")
         
+
         var tempText = ""
         textView.text = ""
         //file name :- /directory/fileName
@@ -83,6 +86,33 @@ class CreationViewController: UIViewController, UIDocumentPickerDelegate, UINavi
         if nameTextField.text == ""{
             nameTextField.text = myURL.deletingPathExtension().lastPathComponent
         }
+        
+        
+        //MARK: - PDF import
+        
+        if myURL.pathExtension == "pdf"{
+            //let webView = WKWebView(frame: view.frame)
+            //let urlRequest = URLRequest(url: myURL)
+            //webView.load(urlRequest)
+            //view.addSubview(webView)
+            
+            
+            //PDFKit
+            if let pdf = PDFDocument(url: myURL){
+                let pageCount = pdf.pageCount
+                let documentContent = NSMutableAttributedString()
+                
+                for i in 1..<pageCount{
+                    guard let page = pdf.page(at: i) else{continue}
+                    guard let pageContent = page.attributedString else{continue}
+                    documentContent.append(pageContent)
+                }
+                print(documentContent)
+                textView.attributedText = documentContent
+            }
+        }
+            
+
         textView.adjustsFontForContentSizeCategory = true
     }
     
