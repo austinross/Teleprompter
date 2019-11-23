@@ -12,9 +12,11 @@ import AVFoundation
 class PresentViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var rButton: UIButton!
+    @IBOutlet weak var rButton: UIBarButtonItem!
     @IBOutlet weak var volumeSlider: UISlider!
     
+    @IBOutlet var toolbar: UIToolbar!
+    @IBOutlet weak var playPauseButton: UIBarButtonItem!
     var text: String?
     var recordingSession : AVAudioSession!
     var audioRecorder: AVAudioRecorder!
@@ -22,6 +24,7 @@ class PresentViewController: UIViewController {
     var fName: String = "FileNameRec"
     
     var audioPlayer: AVAudioPlayer?
+    var isPlaying: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +65,7 @@ class PresentViewController: UIViewController {
         textView.flipX()
     }
     
-    
+    //MARK: - Recording
     @IBAction func volumeSliderAdj(_ sender: Any) {
         if audioPlayer != nil{
             audioPlayer?.volume = volumeSlider.value
@@ -71,7 +74,7 @@ class PresentViewController: UIViewController {
     func loadRecordingUI(){
         print("Button here")
         //view.addSubview(recordButton)
-        rButton.setTitle("Tap To Record1", for: .normal)
+        rButton.title = "Tap To Record1"
         
     }
     //Record Button Tapped
@@ -117,7 +120,7 @@ class PresentViewController: UIViewController {
             audioRecorder.delegate = self as? AVAudioRecorderDelegate
             audioRecorder.record()
             
-            rButton.setTitle("Tap to Stop1", for: .normal)
+            rButton.title = "Tap to Stop1"
             audioTimer()
         }catch{
             print("error in avaudiorecorder")
@@ -127,6 +130,7 @@ class PresentViewController: UIViewController {
     //saving the file
     func getDocumentsDirectory() -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(paths[0])
         return paths[0]
     }
     //end recording
@@ -135,10 +139,10 @@ class PresentViewController: UIViewController {
         audioRecorder = nil
         
         if success{
-            rButton.setTitle("Re-record1", for: .normal)
+            rButton.title = "Re-record1"
         }
         else{
-            rButton.setTitle("Record1", for: .normal )
+            rButton.title = "Record1"
         }
         
     }
@@ -155,8 +159,25 @@ class PresentViewController: UIViewController {
     
     
     @IBAction func playButtonTapped(_ sender: Any) {
-        let playFile = getDocumentsDirectory().appendingPathComponent(fName).appendingPathExtension("m4a")
+        var items = toolbar.items
+        if (isPlaying){
+            print("Change to Pause")
+            items![4] = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.pause, target: self, action: #selector(self.playButtonTapped(_:)))
+            playFun()
+            isPlaying = false
+        }
+        else{
+            print("Change to play")
+            items![4] = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.play, target: self, action: #selector(self.playButtonTapped(_:)))
+            isPlaying = true
+        }
+        self.toolbar.setItems(items, animated: true)
         
+        
+    }
+
+    func playFun(){
+        let playFile = getDocumentsDirectory().appendingPathComponent(fName).appendingPathExtension("m4a")
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: playFile)
             audioPlayer?.play()
@@ -166,7 +187,8 @@ class PresentViewController: UIViewController {
             print("Fail to play \(error)")
         }
     }
-}
+    }
+//MARK: - Extension
 
 extension UIView {
    /// Flip view horizontally.
