@@ -286,7 +286,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="UaK-OQ-yoO"/>
-                                    <barButtonItem systemItem="rewind" id="91M-nt-WqB"/>
+                                    <barButtonItem systemItem="rewind" id="91M-nt-WqB">
+                                        <connections>
+                                            <action selector="rewindButtonTapped:" destination="hWC-D0-ifJ" id="vrc-KL-AzR"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="TKd-7F-XfP"/>
                                     <barButtonItem systemItem="play" id="JJG-Ye-LtV">
                                         <connections>
@@ -294,7 +298,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="kjf-GN-CoT"/>
-                                    <barButtonItem systemItem="fastForward" id="dyB-Pr-CIk"/>
+                                    <barButtonItem systemItem="fastForward" id="dyB-Pr-CIk">
+                                        <connections>
+                                            <action selector="ffButtonTapped:" destination="hWC-D0-ifJ" id="pKU-80-Io5"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
