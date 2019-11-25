@@ -40,6 +40,7 @@ class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPick
             //Check if text is already being edited
             if textView.isEditable == false {
                 textView.isEditable = true
+                textView.becomeFirstResponder()
             }
             else {
                 textView.isEditable = false
