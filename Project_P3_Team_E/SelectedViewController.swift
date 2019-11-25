@@ -12,6 +12,16 @@ import RealmSwift
 import WebKit
 import PDFKit
 
+extension SelectedViewController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+}
+
 class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPickerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tabBar: UITabBar!
@@ -22,7 +32,6 @@ class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPick
     @IBOutlet weak var settings: UITabBarItem!
     @IBOutlet weak var delete: UITabBarItem!
     
-    
     var prompt: Prompt?
     
     override func viewDidLoad() {
@@ -30,6 +39,7 @@ class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPick
         tabBar.delegate = self
         promptName.text = prompt?.name
         textView.text = prompt?.text
+        textView.delegate = self
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -129,5 +139,4 @@ class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPick
            nextVC!.text = prompt?.text
        }
     }
-
 }
