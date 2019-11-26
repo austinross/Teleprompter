@@ -433,7 +433,7 @@
                                     <action selector="cancel:" destination="8eP-Nq-MaC" id="mPS-Hz-HEO"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="square.and.arrow.down" id="GNn-lt-zi1">
+                            <barButtonItem systemItem="add" id="GNn-lt-zi1">
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="importPrompt:" destination="8eP-Nq-MaC" id="hXp-Tp-79q"/>
@@ -486,7 +486,6 @@
         <image name="arrow.up.arrow.down" width="64" height="48"/>
         <image name="gear" width="16" height="16"/>
         <image name="pencil" width="64" height="56"/>
-        <image name="square.and.arrow.down" width="16" height="16"/>
         <image name="square.and.arrow.up" width="56" height="64"/>
         <image name="trash" width="60" height="64"/>
     </resources>
