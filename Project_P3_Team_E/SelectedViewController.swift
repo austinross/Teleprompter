@@ -87,6 +87,9 @@ class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPick
                 print("failed to write")
                 print(error)
             }
+            let alert = UIAlertController(title: "\(prompt!.name) has been exported!", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
         case 2: //Settings
             if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController {
                 if let navigator = navigationController {
@@ -101,6 +104,7 @@ class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPick
                 try! realm.write {
                     realm.delete(prompt!)
                 }
+                self.navigationController?.popViewController(animated: true)
             }))
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
             self.present(alert, animated: true)

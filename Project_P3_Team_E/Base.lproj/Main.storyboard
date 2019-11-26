@@ -82,17 +82,12 @@
                                 <segue destination="8eP-Nq-MaC" kind="show" id="6j9-9E-2Wf"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="gear" catalog="system" id="E6z-lK-GO5">
-                                <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="oDd-dT-cjg" kind="show" id="bni-5U-2Rp"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="search" id="b8W-IV-Uhi">
-                                <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="E6z-lK-GO5">
+                            <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="oDd-dT-cjg" kind="show" id="bni-5U-2Rp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="8Oj-Oe-0oL" id="f3V-7x-8tj"/>
@@ -368,6 +363,7 @@
                     <connections>
                         <outlet property="playPauseButton" destination="JJG-Ye-LtV" id="EpK-MB-Bjj"/>
                         <outlet property="rButton" destination="x8b-CN-44l" id="8pJ-Og-g71"/>
+                        <outlet property="scrollButtonItem" destination="TDq-uk-PBj" id="Iy6-Xd-9mW"/>
                         <outlet property="textView" destination="u0m-pi-5xa" id="V1n-PN-CPg"/>
                         <outlet property="toolbar" destination="vLQ-rq-fza" id="5hT-ag-Hhw"/>
                         <outlet property="volumeSlider" destination="feJ-DH-fOg" id="rdt-KJ-dRD"/>

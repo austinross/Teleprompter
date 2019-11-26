@@ -15,6 +15,7 @@ class PresentViewController: UIViewController {
     var isScrolling = false
     @IBOutlet weak var rButton: UIBarButtonItem!
     @IBOutlet weak var volumeSlider: UISlider!
+    @IBOutlet weak var scrollButtonItem: UIBarButtonItem!
     
     @IBOutlet var audioTimerLabel: UILabel!
     @IBOutlet var toolbar: UIToolbar!
@@ -37,6 +38,7 @@ class PresentViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     var scrollSpeed = 1
+    var scrollTimer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,10 +88,21 @@ class PresentViewController: UIViewController {
     
     @IBAction func scroll(_ sender: Any) {
         if isScrolling {
-            //Stop the scrolling
+            isScrolling = false
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(scroll(_:)))
+            timer?.invalidate()
         }
         else {
-            //Start scrolling
+            isScrolling = true
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(scroll(_:)))
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(scrollTextView), userInfo: nil, repeats: true)
+        }
+    }
+    
+    @objc func scrollTextView() {
+        if isScrolling && textView.contentOffset.y < (self.textView.contentSize.height - self.textView.bounds.size.height) {
+            let point = CGPoint(x: 0.0, y: (textView.contentOffset.y + CGFloat(10.0 * Double(scrollSpeed))))
+            textView.setContentOffset(point, animated: true)
         }
     }
     
