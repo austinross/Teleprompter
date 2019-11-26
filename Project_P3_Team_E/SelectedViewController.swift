@@ -52,6 +52,7 @@ class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPick
                 textView.isEditable = true
                 textView.becomeFirstResponder()
             }
+                
             else {
                 textView.isEditable = false
                 let alert = UIAlertController(title: "Would you like to save your changes?", message: "", preferredStyle: .alert)
@@ -129,11 +130,14 @@ class SelectedViewController: UIViewController, UITabBarDelegate, UIDocumentPick
         
         let promptDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
         
-        let prompt = Prompt(name: promptName.text!, date: promptDate, text: textView.text!)
         let realm = try! Realm()
         try! realm.write {
-            realm.add(prompt)
-            print("Added prompt \(prompt.name) to Realm.")
+            let newPrompt = self.prompt
+            newPrompt?.name = promptName.text!
+            newPrompt?.date = promptDate
+            newPrompt?.text = textView.text!
+            realm.add(newPrompt!, update: .modified)
+            print("Added prompt \(prompt!.name) to Realm.")
         }
     }
     

@@ -21,4 +21,8 @@ class Prompt: Object {
     }
 
     required init() {}
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }
