@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Ia-qs-Dh1">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Ia-qs-Dh1">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hZv-71-bhM" id="Qy4-U6-Pvw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speech 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqE-jR-Srt">
@@ -49,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="93" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RWl-2o-YLT" id="4hR-8t-Vkl">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speech 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVd-e5-gTx">
@@ -83,7 +85,7 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="gear" catalog="system" id="E6z-lK-GO5">
+                            <barButtonItem title="Item" image="gear" id="E6z-lK-GO5">
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="oDd-dT-cjg" kind="show" id="bni-5U-2Rp"/>
@@ -118,10 +120,10 @@
                                     <constraint firstAttribute="height" constant="49" id="vue-Or-7V9"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem title="Edit" image="pencil" catalog="system" landscapeImage="pencil" id="1iH-6a-e0o"/>
-                                    <tabBarItem tag="1" title="Export" image="square.and.arrow.up" catalog="system" id="Se7-BK-6vA"/>
-                                    <tabBarItem tag="2" title="Settings" image="gear" catalog="system" landscapeImage="gear" id="Ecq-1x-Uhm"/>
-                                    <tabBarItem tag="3" title="Delete" image="trash" catalog="system" id="2yE-iF-YgH"/>
+                                    <tabBarItem title="Edit" image="pencil" landscapeImage="pencil" selectedImage="pencil" id="1iH-6a-e0o"/>
+                                    <tabBarItem tag="1" title="Export" image="square.and.arrow.up" id="Se7-BK-6vA"/>
+                                    <tabBarItem tag="2" title="Settings" image="gear" landscapeImage="gear" id="Ecq-1x-Uhm"/>
+                                    <tabBarItem tag="3" title="Delete" image="trash" id="2yE-iF-YgH"/>
                                 </items>
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="selectedImageTintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -132,7 +134,7 @@
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,8 +165,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="delete" destination="2yE-iF-YgH" id="aut-lp-S8b"/>
+                        <outlet property="edit" destination="1iH-6a-e0o" id="whF-GE-LwE"/>
+                        <outlet property="export" destination="Se7-BK-6vA" id="itC-1M-u0I"/>
                         <outlet property="navigationItem" destination="zqM-4z-yvh" id="AMT-2K-3UR"/>
                         <outlet property="promptName" destination="qXo-ql-CgP" id="Gd4-kk-Hgm"/>
+                        <outlet property="settings" destination="Ecq-1x-Uhm" id="Y5l-3F-Qdz"/>
                         <outlet property="tabBar" destination="XLh-PL-WHK" id="ovk-9x-ets"/>
                         <outlet property="textView" destination="0N7-k5-0Kw" id="ibO-cx-7ry"/>
                     </connections>
@@ -338,7 +344,7 @@
                                     <action selector="exit:" destination="hWC-D0-ifJ" id="gyT-Bk-a08"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="arrow.up.arrow.down" catalog="system" id="JU2-kE-6HD">
+                            <barButtonItem title="Item" image="arrow.up.arrow.down" id="JU2-kE-6HD">
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="mirrorX:" destination="hWC-D0-ifJ" id="VvV-e8-V6j"/>
@@ -349,7 +355,7 @@
                             <barButtonItem systemItem="play" id="TDq-uk-PBj">
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="arrow.right.arrow.left" catalog="system" id="2dz-lZ-ogf">
+                            <barButtonItem title="Item" image="arrow.right.arrow.left" id="2dz-lZ-ogf">
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="mirrorY:" destination="hWC-D0-ifJ" id="arA-eb-RhR"/>
@@ -405,7 +411,7 @@
                                     <action selector="cancel:" destination="8eP-Nq-MaC" id="mPS-Hz-HEO"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="square.and.arrow.down" catalog="system" id="GNn-lt-zi1">
+                            <barButtonItem image="square.and.arrow.down" id="GNn-lt-zi1">
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="importPrompt:" destination="8eP-Nq-MaC" id="hXp-Tp-79q"/>
@@ -413,7 +419,7 @@
                             </barButtonItem>
                         </leftBarButtonItems>
                         <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Title" textAlignment="center" minimumFontSize="15" id="vfL-wv-k5P">
-                            <rect key="frame" x="135" y="10" width="164" height="24"/>
+                            <rect key="frame" x="128" y="10" width="164" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits"/>
