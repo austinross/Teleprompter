@@ -48,6 +48,7 @@ class PresentViewController: UIViewController {
         var fontSize = defaults.integer(forKey: "fontSize")
         let fontStyle = defaults.string(forKey: "fontStyle") ?? "Arial"
         let fontColor = defaults.string(forKey: "fontColor") ?? "White"
+        let bgColor = defaults.string(forKey: "bgColor") ?? "Black"
         scrollSpeed = defaults.integer(forKey: "scrollSpeed")
        
         if fontSize == 0 {
@@ -57,6 +58,7 @@ class PresentViewController: UIViewController {
         
         textView.font = UIFont(name: fontStyle, size: CGFloat(fontSize))
         textView.textColor = getColor(str: fontColor)
+        textView.backgroundColor = getColor(str: bgColor)
         
         recordingSession = AVAudioSession.sharedInstance()
         do{
