@@ -45,13 +45,18 @@ class PresentViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = .black
         textView.text = text
         
-        let fontSize = defaults.integer(forKey: "fontSize")
-        let fontStyle = defaults.string(forKey: "fontStyle")
-        let fontColor = defaults.string(forKey: "fontColor")
-        
+        var fontSize = defaults.integer(forKey: "fontSize")
+        let fontStyle = defaults.string(forKey: "fontStyle") ?? "Arial"
+        let fontColor = defaults.string(forKey: "fontColor") ?? "White"
         scrollSpeed = defaults.integer(forKey: "scrollSpeed")
-        textView.font = UIFont(name: fontStyle!, size: CGFloat(fontSize))
-        textView.textColor = getColor(str: fontColor!)
+       
+        if fontSize == 0 {
+            fontSize = 40
+            scrollSpeed = 2
+        }
+        
+        textView.font = UIFont(name: fontStyle, size: CGFloat(fontSize))
+        textView.textColor = getColor(str: fontColor)
         
         recordingSession = AVAudioSession.sharedInstance()
         do{

@@ -30,13 +30,18 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
-        let fontSize = defaults.integer(forKey: "fontSize")
-        let fontStyle = defaults.string(forKey: "fontStyle")
-        let fontColor = defaults.string(forKey: "fontColor")
-        let scrollSpeed = defaults.integer(forKey: "scrollSpeed")
+        var fontSize = defaults.integer(forKey: "fontSize")
+        let fontStyle = defaults.string(forKey: "fontStyle") ?? "Arial"
+        let fontColor = defaults.string(forKey: "fontColor") ?? "White"
+        var scrollSpeed = defaults.integer(forKey: "scrollSpeed")
         
-        exampleLabel.font = UIFont(name: fontStyle ?? "Arial", size: CGFloat(fontSize))
-        exampleLabel.textColor = getColor(str: fontColor!)
+        if fontSize == 0 {
+            fontSize = 40
+            scrollSpeed = 2
+        }
+        
+        exampleLabel.font = UIFont(name: fontStyle, size: CGFloat(fontSize))
+        exampleLabel.textColor = getColor(str: fontColor)
         
         let fontSizePickerView = UIPickerView()
         fontSizePickerView.delegate = self

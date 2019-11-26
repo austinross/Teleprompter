@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,8 +23,8 @@
                                     <constraint firstAttribute="height" constant="225" id="94l-Zy-lvb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teleprompter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9O7-5T-uEy">
-                                <rect key="frame" x="91" y="569" width="232" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teleprompter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9O7-5T-uEy">
+                                <rect key="frame" x="0.0" y="569" width="414" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,8 +34,8 @@
                         <constraints>
                             <constraint firstItem="9O7-5T-uEy" firstAttribute="top" secondItem="as8-T5-GPj" secondAttribute="bottom" constant="8.5" id="5pX-iN-NFI"/>
                             <constraint firstItem="as8-T5-GPj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VNU-um-vJH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9O7-5T-uEy" secondAttribute="trailing" constant="91" id="aVW-88-zAX"/>
-                            <constraint firstItem="9O7-5T-uEy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="91" id="nUp-QU-aXO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9O7-5T-uEy" secondAttribute="trailing" id="aVW-88-zAX"/>
+                            <constraint firstItem="9O7-5T-uEy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nUp-QU-aXO"/>
                             <constraint firstItem="as8-T5-GPj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="r3W-vR-R8j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

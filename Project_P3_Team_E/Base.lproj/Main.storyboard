@@ -180,10 +180,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aa Bb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhB-BP-BDv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aa Bb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhB-BP-BDv">
                                 <rect key="frame" x="20" y="122" width="374" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="eOv-8c-3bf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -209,7 +211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Arial" borderStyle="roundedRect" placeholder="System" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QYa-jd-iwN">
-                                <rect key="frame" x="118" y="290" width="97" height="34"/>
+                                <rect key="frame" x="118" y="290" width="144" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -242,6 +244,11 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uhB-BP-BDv" firstAttribute="leading" secondItem="zT7-Yb-qFK" secondAttribute="leading" constant="20" id="UV2-lt-HBK"/>
+                            <constraint firstItem="uhB-BP-BDv" firstAttribute="top" secondItem="zT7-Yb-qFK" secondAttribute="top" constant="34" id="WwF-oW-dSk"/>
+                            <constraint firstItem="zT7-Yb-qFK" firstAttribute="trailing" secondItem="uhB-BP-BDv" secondAttribute="trailing" constant="20" id="uRb-E2-CYt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zT7-Yb-qFK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Hl1-lW-8Sj" customClass="I"/>
