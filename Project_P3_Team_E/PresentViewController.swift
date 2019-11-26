@@ -12,6 +12,7 @@ import AVFoundation
 class PresentViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
+    var isScrolling = false
     @IBOutlet weak var rButton: UIBarButtonItem!
     @IBOutlet weak var volumeSlider: UISlider!
     
@@ -34,11 +35,21 @@ class PresentViewController: UIViewController {
     //recordint Timencounter
     var timeCount: Double = 0.0
     
+    let defaults = UserDefaults.standard
+    var scrollSpeed = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = .black
         textView.text = text
         
+        let fontSize = defaults.integer(forKey: "fontSize")
+        let fontStyle = defaults.string(forKey: "fontStyle")
+        let fontColor = defaults.string(forKey: "fontColor")
+        
+        scrollSpeed = defaults.integer(forKey: "scrollSpeed")
+        textView.font = UIFont(name: fontStyle!, size: CGFloat(fontSize))
+        textView.textColor = getColor(str: fontColor!)
         
         recordingSession = AVAudioSession.sharedInstance()
         do{
@@ -72,6 +83,16 @@ class PresentViewController: UIViewController {
     @IBAction func mirrorY(_ sender: Any) {
         textView.flipX()
     }
+    
+    @IBAction func scroll(_ sender: Any) {
+        if isScrolling {
+            //Stop the scrolling
+        }
+        else {
+            //Start scrolling
+        }
+    }
+    
     
     //MARK: - Recording
     @IBAction func volumeSliderAdj(_ sender: Any) {
