@@ -244,6 +244,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Background Color:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHa-P2-CYV">
+                                <rect key="frame" x="20" y="401" width="162" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-MC-4pP">
+                                <rect key="frame" x="190" y="401" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -255,6 +269,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Hl1-lW-8Sj" customClass="I"/>
                     <connections>
+                        <outlet property="bgColorTextField" destination="wZ6-MC-4pP" id="TDJ-MC-JHg"/>
                         <outlet property="exampleLabel" destination="uhB-BP-BDv" id="QcI-S2-ERh"/>
                         <outlet property="fontColorTextField" destination="VKp-ic-KJX" id="sGz-Jj-5Ln"/>
                         <outlet property="fontSizeTextField" destination="TiP-Va-Kk0" id="uyr-6k-57y"/>

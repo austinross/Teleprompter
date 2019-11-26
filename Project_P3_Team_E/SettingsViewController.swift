@@ -21,10 +21,13 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var fontStyles = ["Arial", "Helvetica", "Times New Roman"]
     
     @IBOutlet weak var fontColorTextField: UITextField!
-    var fontColors = ["White", "Blue", "Red", "Green", "Yellow"]
+    var fontColors = ["White", "Black", "Blue", "Red", "Green", "Yellow"]
     
     @IBOutlet weak var scrollSpeedTextField: UITextField!
     var scrollSpeeds = ["x1","x2","x3","x4","x5"]
+    
+    @IBOutlet weak var bgColorTextField: UITextField!
+    var bgColors = ["Black", "White"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let fontStyle = defaults.string(forKey: "fontStyle") ?? "Arial"
         let fontColor = defaults.string(forKey: "fontColor") ?? "White"
         var scrollSpeed = defaults.integer(forKey: "scrollSpeed")
+        let bgColor = defaults.string(forKey: "bgColor") ?? "Black"
         
         if fontSize == 0 {
             fontSize = 40
@@ -66,6 +70,12 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         scrollSpeedPickerView.tag = 3
         scrollSpeedTextField.inputView = scrollSpeedPickerView
         scrollSpeedTextField.text = "x"+String(scrollSpeed)
+        
+        let bgColorPickerView = UIPickerView()
+        bgColorPickerView.delegate = self
+        bgColorPickerView.tag = 4
+        bgColorTextField.inputView = bgColorPickerView
+        bgColorTextField.text = bgColor
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -82,6 +92,8 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
             return fontColors.count
         case 3:
             return scrollSpeeds.count
+        case 4:
+            return bgColors.count
         default:
             return 0
         }
@@ -97,6 +109,8 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
             return fontColors[row]
         case 3:
             return scrollSpeeds[row]
+        case 4:
+            return bgColors[row]
         default:
             return ""
         }
@@ -127,6 +141,11 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
             scrollSpeedTextField.text = scrollSpeeds[row]
             let speed = Int(String(Array(scrollSpeeds[row])[1]))
             defaults.set(speed, forKey: "scrollSpeed")
+        case 4:
+            bgColorTextField.text = bgColors[row]
+            let color = getColor(str: bgColors[row])
+            exampleLabel.backgroundColor = color
+            defaults.set(bgColors[row], forKey: "bgColor")
         default:
             print("Default")
         }
@@ -158,6 +177,8 @@ public extension UIViewController {
             return UIColor.orange
         case "Yellow":
             return UIColor.yellow
+        case "Black":
+            return UIColor.black
         default:
             return UIColor.white
         }
