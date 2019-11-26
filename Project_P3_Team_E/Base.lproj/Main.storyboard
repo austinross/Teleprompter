@@ -185,7 +185,7 @@
                                 <rect key="frame" x="20" y="122" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -209,7 +209,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="System" borderStyle="roundedRect" placeholder="System" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QYa-jd-iwN">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Arial" borderStyle="roundedRect" placeholder="System" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QYa-jd-iwN">
                                 <rect key="frame" x="118" y="290" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -246,6 +246,13 @@
                         <viewLayoutGuide key="safeArea" id="zT7-Yb-qFK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Hl1-lW-8Sj" customClass="I"/>
+                    <connections>
+                        <outlet property="exampleLabel" destination="uhB-BP-BDv" id="QcI-S2-ERh"/>
+                        <outlet property="fontColorTextField" destination="VKp-ic-KJX" id="sGz-Jj-5Ln"/>
+                        <outlet property="fontSizeTextField" destination="TiP-Va-Kk0" id="uyr-6k-57y"/>
+                        <outlet property="fontStyleTextField" destination="QYa-jd-iwN" id="T1c-Ja-XAc"/>
+                        <outlet property="scrollSpeedTextField" destination="BiU-ma-cXF" id="UFz-jp-RoL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2E-0e-tk9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,9 +457,7 @@
         <image name="arrow.right.arrow.left" catalog="system" width="58" height="64"/>
         <image name="arrow.up.arrow.down" catalog="system" width="64" height="48"/>
         <image name="gear" catalog="system" width="64" height="58"/>
-        <image name="gear" width="64" height="58"/>
         <image name="pencil" catalog="system" width="64" height="56"/>
-        <image name="pencil" width="64" height="56"/>
         <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
         <image name="trash" catalog="system" width="60" height="64"/>
