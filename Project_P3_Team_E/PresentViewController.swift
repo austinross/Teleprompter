@@ -78,6 +78,17 @@ class PresentViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        timer?.invalidate()
+        recordTimer?.invalidate()
+        if audioPlayer != nil{
+            audioPlayer = nil
+        }
+        if audioRecorder != nil{
+            finishRecording(success: false)
+        }
+    }
+    
     @IBAction func exit(_ sender: Any) {
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.popViewController(animated: true)
